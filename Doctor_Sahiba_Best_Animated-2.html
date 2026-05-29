@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Sahiba ✨</title>
+<style>
+body{
+margin:0;
+font-family:Segoe UI,Arial,sans-serif;
+background:linear-gradient(135deg,#ffd6e8,#fff7fb);
+overflow:hidden;
+}
+.floating{
+position:fixed; inset:0; pointer-events:none;
+}
+.item{
+position:absolute;
+font-size:22px;
+animation:rise 10s linear infinite;
+opacity:.75;
+}
+@keyframes rise{
+from{transform:translateY(110vh) rotate(0deg);opacity:0}
+20%{opacity:1}
+to{transform:translateY(-20vh) rotate(360deg);opacity:0}
+}
+.container{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+.card{
+width:min(820px,95vw);
+background:rgba(255,255,255,.92);
+border-radius:30px;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+text-align:center;
+}
+.page{display:none}
+.page.active{display:block}
+.btn{
+background:#ff5b9a;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:14px;
+cursor:pointer;
+font-size:16px;
+}
+.box{
+background:#fff4f9;
+padding:18px;
+border-radius:18px;
+margin:14px 0;
+line-height:1.8;
+}
+h1{color:#ff4b8d}
+</style>
+</head>
+<body>
+<div class="floating" id="fx"></div>
+
+<div class="container">
+<div class="card">
+
+<div class="page active" id="p1">
+<h1>🌸 Doctor Sahiba.exe 🌸</h1>
+<div class="box">
+⚠️ Attention Doctor Sahiba<br><br>
+Ye page kholne se pehle 20 second ka study break lena mandatory hai 😭😂
+</div>
+<button class="btn" onclick="show(2)">Continue ➜</button>
+</div>
+
+<div class="page" id="p2">
+<h1>🔍 Personality Scan</h1>
+<div class="box">
+✔ Future Doctor 👩‍⚕️<br>
+✔ Hardworking ✅<br>
+✔ Intelligent ✅<br>
+✔ AIIMS Dream Active ✅<br>
+✔ Teasing Skills = Dangerous 😭😂<br>
+⚠️ Bhaiya Vocabulary = Unlimited
+</div>
+<button class="btn" onclick="show(3)">Next ➜</button>
+</div>
+
+<div class="page" id="p3">
+<h1>💌 Tiny Note</h1>
+<div class="box">
+Waise doctor sahiba...<br><br>
+Kabhi kabhi lagta hai aapka hidden talent padhai nahi hai 😭😂<br>
+Aapka hidden talent hai logon ko confuse karna 👀✨<br><br>
+Kabhi serious...<br>
+Kabhi funny...<br>
+Kabhi doctor mode...<br>
+Aur kabhi bhaiya mode 💀
+</div>
+<button class="btn" onclick="show(4)">One More ➜</button>
+</div>
+
+<div class="page" id="p4">
+<h1>🌷 Small Sorry</h1>
+<div class="box">
+Agar kabhi maine overdo kar diya ho,<br>
+ya thoda zyada tang kiya ho...<br><br>
+To ek chhota sa sorry 🤝🌸<br><br>
+Bas chhota sa 😭<br>
+Itna bhi nahi ki phir se "Ok Bhaiya" aa jaye 😂
+</div>
+<button class="btn" onclick="show(5)">Final Page ➜</button>
+</div>
+
+<div class="page" id="p5">
+<h1>👀 Final Question</h1>
+<div class="box">
+Sach sach batana...<br><br>
+Agar aapko mera school wala version bilkul yaad na hota...<br>
+Aur hum aaj pehli baar milte...<br><br>
+To first impression report me mere kitne marks aate? 😭😂
+</div>
+<p><b>Status:</b> Respect = 100% ✅</p>
+<p>Take Care Doctor Sahiba 🌸✨</p>
+<p>– Yash 🙂</p>
+</div>
+
+</div>
+</div>
+
+<script>
+function show(n){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('p'+n).classList.add('active');
+}
+const fx=document.getElementById('fx');
+const arr=['🌸','💖','✨'];
+for(let i=0;i<30;i++){
+let e=document.createElement('div');
+e.className='item';
+e.innerHTML=arr[Math.floor(Math.random()*arr.length)];
+e.style.left=Math.random()*100+'%';
+e.style.animationDelay=(Math.random()*10)+'s';
+fx.appendChild(e);
+}
+</script>
+</body>
+</html>
